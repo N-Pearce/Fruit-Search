@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :focus {
+   /* TODO */
+   outline: orange auto 5px;
+  }
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, yellow, orange);
+  }
+  
+  input {
+    border: 0 none;
+  }
+  
+  .search-container {
+    width: 400px;
+    position: relative;
+    input, .suggestions {
+      width: 100%;
+    }
+    input {
+      background: rgba(255, 255, 255, 0.2);
+      height: 60px;
+      padding: 0 10px;
+    }
+    .suggestions {
+      position: absolute;
+      top: 60px;
+    }
+  }
+  
+  ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    max-height: 200px;
+    overflow-y: auto;
+
+    &.has-suggestions {
+      display: block;
+    }
+  }
+
+  ul li {
+    padding: 10px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    &:hover{
+      background-color: orange;
+    }
+  }
