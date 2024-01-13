@@ -13,7 +13,7 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 function search(str) {
 	let results = [];
 	let searchString = input.value.toLowerCase();
-	results = fruit.filter(f => f.toLowerCase().includes(searchString));
+	results = fruit.filter(Fruit => Fruit.toLowerCase().includes(searchString));
 	return results;
 }
 
@@ -38,6 +38,10 @@ function showSuggestions(results, inputVal) {
 	
 }
 
+function clearSuggestoins(){
+	suggestions.innerHTML = '';
+}
+
 function useSuggestion(e) {
 	input.value = e.target.innerText;
 	searchHandler();
@@ -45,3 +49,4 @@ function useSuggestion(e) {
 
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
+document.body.addEventListener('click', clearSuggestoins);
